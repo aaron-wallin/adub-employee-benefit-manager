@@ -1,0 +1,48 @@
+<div class="container">
+
+    <h1>Editing Employee {{employeeId}}</h1>
+
+    <form class="needs-validation">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h4><span class="text-muted">Employee Information</span></h4>
+            </div>
+
+            <div class="row card-body">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder value required>
+                    <div class="invalid-feedback">
+                        First name is required.
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder value required>
+                    <div class="invalid-feedback">
+                        Last name is required.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+                <div class="card-header">
+                    <h4><span class="text-muted">Dependent Information</span></h4>
+                    <button class="btn btn-primary float-right">Add new dependent</button>
+                </div>
+                <div class="row card-body">
+
+                </div>
+        </div>    
+
+        <button class="btn btn-primary btn-lg btn-block" type="submit">
+            Save
+        </button>
+    </form>
+
+    <button class="btn btn-primary btn-lg btn-block" [routerLink]="['/employees']">
+        Back to employee list
+    </button>
+</div>
