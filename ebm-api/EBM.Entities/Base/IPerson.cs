@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EBM.Models
+namespace EBM.Entities.Base
 {
     public interface IPerson
     {

@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EBM.Models\EBM.Models.csproj" />
+    <ProjectReference Include="..\EBM.BenefitLogic\EBM.BenefitLogic.csproj" />
+    <ProjectReference Include="..\EBM.Entities\EBM.Entities.csproj" />
+    <ProjectReference Include="..\EBM.PaycheckLogic\EBM.PaycheckLogic.csproj" />
   </ItemGroup>
 
 </Project>

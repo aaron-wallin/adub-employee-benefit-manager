@@ -1,9 +1,8 @@
-﻿using EBM.Models.BenefitDiscount;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using EBM.BenefitLogic.BenefitPolicies;
+using EBM.Entities;
+using EBM.Entities.Base;
 
-namespace EBM.Models
+namespace EBM.BenefitLogic
 {
     public class BenefitCalculatorService
     {
@@ -14,9 +13,9 @@ namespace EBM.Models
             _benefitDiscountPolicy = benefitDiscountPolicy;
         }
 
-        public Benefits Calculate(Employee employee)
+        public BenefitInfo Calculate(Employee employee)
         {
-            var benefitsSummary = new Benefits();
+            var benefitsSummary = new BenefitInfo();
 
             CalculateForIndividual(employee, benefitsSummary);
 
@@ -28,7 +27,7 @@ namespace EBM.Models
             return benefitsSummary;
         }
 
-        private void CalculateForIndividual(IBenefitEligiblePerson person, Benefits benefitsSummary)
+        private void CalculateForIndividual(IBenefitPerson person, BenefitInfo benefitsSummary)
         {
             _benefitDiscountPolicy.CalculateDiscount(person);
 

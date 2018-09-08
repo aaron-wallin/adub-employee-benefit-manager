@@ -1,4 +1,11 @@
-<h1>Employee Management</h1>
+<div class="row">
+    <div class="col-6">
+        <h1 class="mb-5">Employee Management</h1>
+    </div>
+    <div class="col-6">
+        <button class="btn btn-primary float-right mb-5" [routerLink]="['/employee/add']">Add new employee</button>
+    </div>
+</div>
 
 <div class="row">
     <table class="table">
@@ -19,7 +26,7 @@
                 <td>{{e.LastName}}</td>
                 <td style="text-align: center;">{{e.Dependents.length}}</td>
                 <td><button class="btn btn-primary btn-info btn-block">Preview</button></td>
-                <td><button class="btn btn-primary btn-success btn-block" [routerLink]="['/employee', e.EmployeeId]">Edit</button></td>
+                <td><button class="btn btn-primary btn-success btn-block" [routerLink]="['/employee/edit', e.EmployeeId]">Edit</button></td>
                 <td><button class="btn btn-primary btn-danger btn-block">Delete</button></td>
             </tr>
         </tbody>

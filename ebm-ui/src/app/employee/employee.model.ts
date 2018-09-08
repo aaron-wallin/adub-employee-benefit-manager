@@ -5,4 +5,11 @@ export class EmployeeModel {
     FirstName: string;
     LastName: string;
     Dependents: DependentModel[];
+
+    constructor() {
+        this.EmployeeId = '';
+        this.FirstName = '';
+        this.LastName = '';
+        this.Dependents = new Array<DependentModel>();
+    }
 }
