@@ -12,6 +12,12 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { EmployeeDataService } from './services/employee.data.service';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ApolloModule, Apollo } from 'apollo-angular';
+import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
+import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
+import { ApolloCache } from 'apollo-cache';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +29,9 @@ import { EmployeeDataService } from './services/employee.data.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
+    ApolloModule,
+    HttpLinkModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
@@ -30,4 +39,12 @@ import { EmployeeDataService } from './services/employee.data.service';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+
+export class AppModule {
+  constructor(apollo: Apollo, httpLink: HttpLink) {
+    apollo.create({
+      link: httpLink.create({uri: 'http://localhost:60590/api/ebm'}),
+      cache: new InMemoryCache() as ApolloCache<NormalizedCacheObject>
+    });
+  }
+}

@@ -4,7 +4,7 @@ using EBM.Entities.Base;
 
 namespace EBM.BenefitLogic
 {
-    public class BenefitCalculatorService
+    public class BenefitCalculatorService : IBenefitCalculatorService
     {
         private IBenefitDiscountPolicy _benefitDiscountPolicy;
 

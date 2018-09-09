@@ -4,11 +4,11 @@ using System;
 
 namespace EBM.PaycheckLogic
 {
-    public class PaycheckCalculatorService
+    public class PaycheckCalculatorService : IPaycheckCalculatorService
     {
-        private readonly BenefitCalculatorService _benefitCalculatorService;
+        private readonly IBenefitCalculatorService _benefitCalculatorService;
 
-        public PaycheckCalculatorService(BenefitCalculatorService benefitCalculatorService)
+        public PaycheckCalculatorService(IBenefitCalculatorService benefitCalculatorService)
         {
             this._benefitCalculatorService = benefitCalculatorService;
         }

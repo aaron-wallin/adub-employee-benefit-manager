@@ -12,6 +12,7 @@ namespace EBM.Entities.Factories
         {
             return new Employee()
             {
+                EmployeeId = Guid.NewGuid().ToString(),
                 FirstName = "",
                 LastName = "",
                 Salary = new SalaryInfo()

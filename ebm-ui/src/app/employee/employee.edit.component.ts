@@ -29,7 +29,7 @@ export class EmployeeEditComponent implements OnInit {
 
         if (path.startsWith('/employee/edit')) {
             this.employeeId = this._routeParams.snapshot.params['id'];
-            this.title = 'Editing Employee: ' + this.employeeId + ' ' + this.currentEmployee.FirstName;
+            this.title = 'Editing Employee';
             this.isAdd = false;
         } else {
             this.employeeId = '';
