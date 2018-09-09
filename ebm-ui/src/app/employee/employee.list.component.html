@@ -13,7 +13,7 @@
             <tr>
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
-                <th scope="col" style="text-align: center;"># of Dependents</th>
+                <th scope="col" class="centerTableCell"># of Dependents</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
                 <th scope="col"></th>
@@ -21,12 +21,12 @@
         </thead>
 
         <tbody>
-            <tr *ngFor='let e of employees'>
-                <td>{{e.FirstName}}</td>
-                <td>{{e.LastName}}</td>
-                <td style="text-align: center;">{{e.Dependents.length}}</td>
+            <tr *ngFor='let e of employeeList'>
+                <td>{{e.firstName}}</td>
+                <td>{{e.lastName}}</td>
+                <td style="text-align: center;">{{e.dependentCount}}</td>
                 <td><button class="btn btn-primary btn-info btn-block">Preview</button></td>
-                <td><button class="btn btn-primary btn-success btn-block" [routerLink]="['/employee/edit', e.EmployeeId]">Edit</button></td>
+                <td><button class="btn btn-primary btn-success btn-block" [routerLink]="['/employee/edit', e.employeeId]">Edit</button></td>
                 <td><button class="btn btn-primary btn-danger btn-block">Delete</button></td>
             </tr>
         </tbody>

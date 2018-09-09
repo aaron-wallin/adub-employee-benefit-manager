@@ -8,6 +8,8 @@ namespace EBM.Entities
     {
         public BenefitInfo Benefits { get; set; }
 
+        public BenefitInfo BenefitSummary { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -19,10 +21,10 @@ namespace EBM.Entities
         public List<Dependent> Dependents { get; set; }
 
         public string EmployeeId { get; set; }
+        
+        //protected internal Employee()
+        //{
 
-        protected internal Employee()
-        {
-
-        }
+        //}        
     }
 }

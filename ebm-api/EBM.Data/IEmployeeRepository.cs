@@ -6,7 +6,7 @@ namespace EBM.Data
 {
     public interface IEmployeeRepository
     {
-        void Save(Employee employee);
+        Employee Save(Employee employee);
         Employee Get(string employeeId);
         IEnumerable<Employee> GetAll();
         void Delete(string employeeId);

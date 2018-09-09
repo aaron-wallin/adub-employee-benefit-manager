@@ -24,6 +24,7 @@ namespace EBM.BenefitLogic
                 CalculateForIndividual(d, benefitsSummary);
             }
 
+            employee.BenefitSummary = benefitsSummary;
             return benefitsSummary;
         }
 

@@ -34,9 +34,10 @@ namespace EBM.Data
             return e;
         }
 
-        public void Save(Employee employee)
+        public Employee Save(Employee employee)
         {
             employeeData.AddOrUpdate(employee.EmployeeId, employee, (k, v) => employee);
+            return employee;
         }
 
         public IEnumerable<Employee> GetAll()

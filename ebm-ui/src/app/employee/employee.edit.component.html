@@ -8,11 +8,11 @@
                 <h4><span class="text-muted">Employee Information</span></h4>
             </div>
 
-            <div class="row card-body">                
+            <div class="row card-body">
 
                 <div class="col-md-6 mb-3">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="currentEmployee.FirstName" placeholder
+                    <input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="currentEmployee.firstName" placeholder
                         value required>
                     <div class="invalid-feedback">
                         First name is required.
@@ -21,7 +21,7 @@
 
                 <div class="col-md-6 mb-3">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="currentEmployee.LastName" placeholder
+                    <input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="currentEmployee.lastName" placeholder
                         value required>
                     <div class="invalid-feedback">
                         Last name is required.
@@ -36,41 +36,37 @@
 
         <div class="card mb-4">
             <div class="card-header">
-                <h4><span class="text-muted">Dependent Information</span></h4>
-                <button class="btn btn-primary float-right" (click)="addDependent()">Add new dependent</button>
+                <div class="row">
+                    <h4 class="col-md-6"><span class="text-muted">Dependent Information</span></h4>
+                    <button class="col-md-6 btn btn-primary float-right" (click)="addDependent()" data-toggle="modal" data-target="#dependentEditModal">Add
+                        new dependent</button>
+                </div>
             </div>
             <div class="row card-body">
-                <table class="table" *ngIf="currentEmployee.Dependents?.length > 0">
+                <table class="table" *ngIf="currentEmployee.dependents?.length > 0">
                     <thead>
                         <tr>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
                             <th scope="col"></th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        <tr *ngFor='let d of currentEmployee.Dependents'>
-                            <td><input type="text" class="form-control" id="firstName" name="firstName" [(ngModel)]="d.FirstName"
-                                    placeholder value required>
-                                <div class="invalid-feedback">
-                                    First name is required.
-                                </div>
-                            </td>
-                            <td><input type="text" class="form-control" id="lastName" name="lastName" [(ngModel)]="d.LastName"
-                                    placeholder value required>
-                                <div class="invalid-feedback">
-                                    Last name is required.
-                                </div>
-                            </td>
-                            <td><button class="btn btn-primary btn-danger btn-block">Delete</button></td>
+                        <tr *ngFor='let d of currentEmployee.dependents'>
+                            <td>{{d.firstName}}</td>
+                            <td>{{d.lastName}}</td>
+                            <td><button class="btn btn-primary btn-success btn-block" data-toggle="modal" data-target="#dependentEditModal"
+                                    (click)="selectDependentForEdit(d)">Edit</button></td>
+                            <td><button class="btn btn-primary btn-danger btn-block" (click)="deleteDependent(d)">Delete</button></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <button class="btn btn-primary btn-lg btn-block" type="submit">
+        <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="saveEmployee()">
             Save
         </button>
     </form>
@@ -78,4 +74,24 @@
     <button class="btn btn-primary btn-lg btn-block" [routerLink]="['/employees']">
         Back to employee list
     </button>
+
+    <div class="modal fade" id="dependentEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Edit Dependent</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ebm-dependent-edit [currentDependent]="currentEditDependent"></ebm-dependent-edit>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

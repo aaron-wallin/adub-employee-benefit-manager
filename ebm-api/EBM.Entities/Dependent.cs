@@ -13,9 +13,11 @@ namespace EBM.Entities
 
         public string LastName { get; set; }
 
+        /*
         protected internal Dependent()
         {
 
         }
+        */
     }
 }

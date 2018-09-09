@@ -7,6 +7,7 @@ using EBM.Api.GraphTypes;
 using EBM.BenefitLogic;
 using EBM.BenefitLogic.BenefitPolicies;
 using EBM.Data;
+using EBM.Entities.Factories;
 using EBM.PaycheckLogic;
 using GraphQL;
 using GraphQL.Types;
@@ -48,12 +49,17 @@ namespace EBM.Api
             services.AddSingleton<IBenefitDiscountPolicy, NameDiscountPolicy>();
             services.AddSingleton<IBenefitCalculatorService, BenefitCalculatorService>();
             services.AddSingleton<IPaycheckCalculatorService, PaycheckCalculatorService>();
+            services.AddSingleton<EmployeeFactory, EmployeeFactory>();
+            services.AddSingleton<DependentFactory, DependentFactory>();
 
             // graph objects for ioc
             services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
             services.AddSingleton<GraphDataQuery>();
+            services.AddSingleton<GraphDataMutation>();
             services.AddSingleton<EmployeeType>();
             services.AddSingleton<DependentType>();
+            services.AddSingleton<EmployeeInputType>();
+            services.AddSingleton<DependentInputType>();
 
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new GraphDataSchema(new FuncDependencyResolver(type => sp.GetService(type))));

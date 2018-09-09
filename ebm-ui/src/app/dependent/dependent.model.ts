@@ -1,9 +1,9 @@
 export class DependentModel {
-    FirstName: string;
-    LastName: string;
+    firstName: string;
+    lastName: string;
 
     constructor() {
-        this.FirstName = '';
-        this.LastName = '';
+        this.firstName = '';
+        this.lastName = '';
     }
 }

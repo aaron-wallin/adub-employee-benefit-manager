@@ -10,5 +10,6 @@ namespace EBM.Entities.Base
         SalaryInfo Salary { get; }
         PayCheck PayCheck { get; set; }
         List<Dependent> Dependents { get; }
+        BenefitInfo BenefitSummary { get; }
     }
 }

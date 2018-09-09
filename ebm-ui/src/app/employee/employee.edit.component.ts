@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { EmployeeDataService } from '../services/employee.data.service';
 import { EmployeeModel } from './employee.model';
 import { DependentModel } from '../dependent/dependent.model';
@@ -14,8 +14,8 @@ import { DependentModel } from '../dependent/dependent.model';
 export class EmployeeEditComponent implements OnInit {
 
     employeeId: string;
-    employees: Array<EmployeeModel>;
     currentEmployee: EmployeeModel;
+    currentEditDependent: DependentModel;
     title: string;
     isAdd: boolean;
 
@@ -39,16 +39,49 @@ export class EmployeeEditComponent implements OnInit {
     }
 
     addDependent(): void {
-        console.log(this.currentEmployee.Dependents);
-        this.currentEmployee.Dependents.push(new DependentModel());
-        console.log(this.currentEmployee.Dependents);
+        this.currentEditDependent = new DependentModel();
+        this.currentEmployee.dependents.push(this.currentEditDependent);
+    }
+
+    deleteDependent(dependent: any) {
+        const index = this.currentEmployee.dependents.indexOf(dependent, 0);
+        if (index > -1 ) {
+            this.currentEmployee.dependents.splice(index, 1);
+        }
+    }
+
+    selectDependentForEdit(dependent: any) {
+        this.currentEditDependent = dependent;
+    }
+
+    saveEmployee() {
+        this._employeeDataService.saveEmployee(this.currentEmployee).subscribe(({data}) => {
+            const employeeData = data.saveEmployee;
+            this.currentEmployee.employeeId = employeeData.employeeId;
+
+            if (this.isAdd) {
+                this._route.navigate(['/employee/edit', this.currentEmployee.employeeId]);
+            }
+        });
     }
 
     ngOnInit(): void {
         if (this.isAdd) {
             this.currentEmployee = new EmployeeModel();
         } else {
-            this.employees = this._employeeDataService.getEmployeeList();
+            this._employeeDataService.getEmployee(this.employeeId).subscribe(({data}) => {
+                const employeeData = data.employee;
+                this.currentEmployee.employeeId = employeeData.employeeId;
+                this.currentEmployee.firstName = employeeData.firstName;
+                this.currentEmployee.lastName = employeeData.lastName;
+
+                employeeData.dependents.forEach(d => {
+                    this.currentEmployee.dependents.push({
+                        firstName: d.firstName,
+                        lastName: d.lastName
+                    });
+                });
+            });
         }
     }
 }

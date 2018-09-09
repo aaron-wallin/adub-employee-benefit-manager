@@ -26,6 +26,7 @@ namespace EBM.Entities.Factories
                     DiscountedAnnualCost = _annualBenefitCost,
                     DiscountApplied = false
                 },
+                BenefitSummary = new BenefitInfo(),
                 Dependents = new List<Dependent>(),
                 PayCheck = new PayCheck()
             };

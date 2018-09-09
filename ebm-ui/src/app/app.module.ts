@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NavMainComponent } from './nav/navmain.component';
 import { EmployeeListComponent } from './employee/employee.list.component';
 import { EmployeeEditComponent } from './employee/employee.edit.component';
+import { DependentEditComponent } from './dependent/dependent.edit.component';
 
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
@@ -23,7 +24,8 @@ import { ApolloCache } from 'apollo-cache';
     AppComponent,
     NavMainComponent,
     EmployeeListComponent,
-    EmployeeEditComponent
+    EmployeeEditComponent,
+    DependentEditComponent
   ],
   imports: [
     BrowserModule,
