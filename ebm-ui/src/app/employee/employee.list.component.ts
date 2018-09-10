@@ -13,6 +13,7 @@ import { DependentModel } from '../dependent/dependent.model';
 
 export class EmployeeListComponent implements OnInit {
     employeeList: Array<EmployeeListModel> = new Array<EmployeeListModel>();
+    selectedEmployee: any;
 
     constructor(private _routeParams: ActivatedRoute,
                 private _employeeDataService: EmployeeDataService) {
@@ -29,5 +30,9 @@ export class EmployeeListComponent implements OnInit {
                 } );
             });
         });
+    }
+
+    setSelected(employee: any) {
+        this.selectedEmployee = employee;
     }
 }

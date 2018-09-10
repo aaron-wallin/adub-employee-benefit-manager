@@ -39,6 +39,39 @@ export class EmployeeDataService {
             }
         } `;
 
+    private getEmployeeBenefitPaySummaryQuery = gql`
+        query Employee($employeeId: String) {
+            employee(employeeId: $employeeId) {
+              employeeId
+              firstName
+              lastName
+              benefitInfo {
+                baseAnnualCost
+                discountApplied
+                discountedAnnualCost
+              }
+              benefitInfoSummary {
+                baseAnnualCost
+                discountApplied
+                discountedAnnualCost
+              }
+              paycheck {
+                grossAmount
+                netAmount
+                deductions
+              }
+              dependents {
+                firstName
+                lastName
+                benefitInfo {
+                  baseAnnualCost
+                  discountApplied
+                  discountedAnnualCost
+                }
+              }
+            }
+          }`;
+
     constructor (private _http: Http, private _apollo: Apollo) { }
 
     saveEmployee(employeeData: any) {
@@ -47,6 +80,15 @@ export class EmployeeDataService {
             mutation: this.saveEmployeeMutation,
             variables: {
                 employee
+            }
+        });
+    }
+
+    getEmployeeBenefitPaySummary(employeeId: string): any {
+        return this._apollo.query({
+            query: this.getEmployeeBenefitPaySummaryQuery,
+            variables: {
+                employeeId: employeeId
             }
         });
     }

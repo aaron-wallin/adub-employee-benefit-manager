@@ -18,6 +18,8 @@ namespace EBM.Api.GraphTypes
                         
             Field(_ => _.FirstName);
             Field(_ => _.LastName);
+            Field<BenefitInfoType>("benefitInfo", 
+                resolve: _ => _.Source.Benefits);
         }
     }
 }

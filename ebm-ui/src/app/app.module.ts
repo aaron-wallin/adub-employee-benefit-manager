@@ -18,6 +18,7 @@ import { ApolloModule, Apollo } from 'apollo-angular';
 import { HttpLinkModule, HttpLink } from 'apollo-angular-link-http';
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
 import { ApolloCache } from 'apollo-cache';
+import { BenefitPaySummaryComponent } from './benefitpaysummary/benefitpaysummary.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ApolloCache } from 'apollo-cache';
     NavMainComponent,
     EmployeeListComponent,
     EmployeeEditComponent,
-    DependentEditComponent
+    DependentEditComponent,
+    BenefitPaySummaryComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,7 @@ import { ApolloCache } from 'apollo-cache';
 export class AppModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
     apollo.create({
-      link: httpLink.create({uri: 'http://localhost:60590/api/ebm'}),
+      link: httpLink.create({uri: 'http://localhost:19015/api/ebm'}),
       cache: new InMemoryCache() as ApolloCache<NormalizedCacheObject>
     });
   }

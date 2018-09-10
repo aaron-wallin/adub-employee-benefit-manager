@@ -60,6 +60,8 @@ namespace EBM.Api
             services.AddSingleton<DependentType>();
             services.AddSingleton<EmployeeInputType>();
             services.AddSingleton<DependentInputType>();
+            services.AddSingleton<BenefitInfoType>();
+            services.AddSingleton<PaycheckType>();
 
             var sp = services.BuildServiceProvider();
             services.AddSingleton<ISchema>(new GraphDataSchema(new FuncDependencyResolver(type => sp.GetService(type))));
