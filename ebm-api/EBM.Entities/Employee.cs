@@ -1,5 +1,4 @@
 ﻿using EBM.Entities.Base;
-using System;
 using System.Collections.Generic;
 
 namespace EBM.Entities

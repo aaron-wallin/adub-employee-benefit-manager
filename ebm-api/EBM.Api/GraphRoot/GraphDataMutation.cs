@@ -5,9 +5,6 @@ using EBM.Entities.Factories;
 using EBM.PaycheckLogic;
 using GraphQL.Types;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EBM.Api.GraphRoot
 {

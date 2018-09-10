@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EBM.Entities\EBM.Entities.csproj" />
+    <ProjectReference Include="..\EBM.PaycheckLogic\EBM.PaycheckLogic.csproj" />
   </ItemGroup>
 
 </Project>

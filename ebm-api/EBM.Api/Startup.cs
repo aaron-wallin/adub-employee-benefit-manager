@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using EBM.Api.GraphRoot;
+﻿using EBM.Api.GraphRoot;
 using EBM.Api.GraphTypes;
 using EBM.BenefitLogic;
 using EBM.BenefitLogic.BenefitPolicies;
@@ -16,8 +12,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace EBM.Api
 {

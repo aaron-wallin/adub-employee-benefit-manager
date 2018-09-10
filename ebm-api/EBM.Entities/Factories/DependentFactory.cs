@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace EBM.Entities.Factories
+﻿namespace EBM.Entities.Factories
 {
     public class DependentFactory
     {

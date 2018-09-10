@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Text;
 using EBM.Entities;
-using EBM.Entities.Factories;
 
 namespace EBM.Data
 {
@@ -13,18 +10,7 @@ namespace EBM.Data
         private static readonly ConcurrentDictionary<string, Employee> employeeData = new ConcurrentDictionary<string, Employee>();
 
         public EmployeeRepository()
-        {
-            var ef = new EmployeeFactory();
-            var df = new DependentFactory();
-
-            var emp = ef.CreateEmployee(52000, 26);            
-            emp.FirstName = "Aaron";
-            emp.LastName = "Wallin";
-            emp.Dependents.Add(df.CreateDependent("Alex", "Wallin"));
-            emp.Dependents.Add(df.CreateDependent("Cat", "Wallin"));
-            emp.Dependents.Add(df.CreateDependent("Heidi", "Wallin"));
-
-            Save(emp);            
+        {   
         }
 
         public Employee Get(string employeeId)
