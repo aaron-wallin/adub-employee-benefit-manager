@@ -1,0 +1,7 @@
+---
+applications:
+- name: ebm-server
+  buildpacks: 
+    - https://github.com/cloudfoundry/dotnet-core-buildpack.git  
+  memory: 512M
+  instances: 1  

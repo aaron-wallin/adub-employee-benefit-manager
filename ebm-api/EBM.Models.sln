@@ -5,15 +5,22 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBM.Tests", "EBM.Tests\EBM.Tests.csproj", "{F11FA086-6D6E-4EDA-9BFA-F946E7515354}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBM.Entities", "EBM.Entities\EBM.Entities.csproj", "{00C3B0EE-4CE6-49A8-92A6-8A05B8B1C2CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBM.Entities", "EBM.Entities\EBM.Entities.csproj", "{00C3B0EE-4CE6-49A8-92A6-8A05B8B1C2CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBM.BenefitLogic", "EBM.BenefitLogic\EBM.BenefitLogic.csproj", "{12AB2483-31B6-4BAF-938B-CF1ADD4DC775}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBM.BenefitLogic", "EBM.BenefitLogic\EBM.BenefitLogic.csproj", "{12AB2483-31B6-4BAF-938B-CF1ADD4DC775}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBM.PaycheckLogic", "EBM.PaycheckLogic\EBM.PaycheckLogic.csproj", "{08B99EA8-6A50-43A0-AF2D-B68DAB10D8F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBM.PaycheckLogic", "EBM.PaycheckLogic\EBM.PaycheckLogic.csproj", "{08B99EA8-6A50-43A0-AF2D-B68DAB10D8F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBM.Api", "EBM.Api\EBM.Api.csproj", "{F192F3FC-527D-41DE-A626-E1C39B8AF48F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBM.Api", "EBM.Api\EBM.Api.csproj", "{F192F3FC-527D-41DE-A626-E1C39B8AF48F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBM.Data", "EBM.Data\EBM.Data.csproj", "{9F1E65E3-5FA9-489D-841E-71E9EB8D802D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBM.Data", "EBM.Data\EBM.Data.csproj", "{9F1E65E3-5FA9-489D-841E-71E9EB8D802D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{394A4603-A2DA-47B2-8ECB-335C11124E6D}"
+	ProjectSection(SolutionItems) = preProject
+		.cfignore = .cfignore
+		.deployment = .deployment
+		manifest.yml = manifest.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
