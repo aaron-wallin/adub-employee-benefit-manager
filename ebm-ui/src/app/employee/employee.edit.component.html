@@ -70,7 +70,8 @@
             Save
         </button>
         <p></p>
-        <button class="btn btn-primary btn-info btn-block" [routerLink]="['/employee/summary', currentEmployee.employeeId]">
+        <button class="btn btn-primary btn-info btn-block" *ngIf="isAdd === false" 
+            [routerLink]="['/employee/summary', currentEmployee.employeeId]">
             Benefit & Pay Summary
         </button>
         <p></p>

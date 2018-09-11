@@ -59,6 +59,7 @@ export class AppModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
     apollo.create({
       link: httpLink.create({uri: 'http://localhost:60590/api/ebm'}),
+      // link: httpLink.create({uri: 'https://ebm-server.cfapps.io/api/ebm'}),
       cache: new InMemoryCache() as ApolloCache<NormalizedCacheObject>,
       defaultOptions: this.defaultOptionsApollo,
     });
