@@ -1,7 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
-import { EmployeeModel } from '../employee/employee.model';
-import { DependentModel } from '../dependent/dependent.model';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
 import 'rxjs/add/operator/map';
@@ -72,7 +69,7 @@ export class EmployeeDataService {
             }
           }`;
 
-    constructor (private _http: Http, private _apollo: Apollo) { }
+    constructor (private _apollo: Apollo) { }
 
     saveEmployee(employeeData: any) {
         const employee = employeeData;

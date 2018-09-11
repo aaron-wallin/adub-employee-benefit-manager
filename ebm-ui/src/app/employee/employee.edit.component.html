@@ -66,14 +66,20 @@
             </div>
         </div>
 
-        <button class="btn btn-primary btn-lg btn-block" type="submit" (click)="saveEmployee()">
+        <button class="btn btn-primary btn-block" type="submit" (click)="saveEmployee()">
             Save
+        </button>
+        <p></p>
+        <button class="btn btn-primary btn-info btn-block" [routerLink]="['/employee/summary', currentEmployee.employeeId]">
+            Benefit & Pay Summary
         </button>
     </form>
 
+    <!--
     <button class="btn btn-primary btn-lg btn-block" [routerLink]="['/employees']">
         Back to employee list
     </button>
+    -->
 
     <div class="modal fade" id="dependentEditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">

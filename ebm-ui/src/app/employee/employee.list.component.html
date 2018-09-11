@@ -16,7 +16,6 @@
                 <th scope="col" class="centerTableCell"># of Dependents</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
-                <th scope="col"></th>
             </tr>
         </thead>
 
@@ -25,9 +24,8 @@
                 <td>{{e.firstName}}</td>
                 <td>{{e.lastName}}</td>
                 <td style="text-align: center;">{{e.dependentCount}}</td>
-                <td><button class="btn btn-primary btn-info btn-block" [routerLink]="['/employee/summary', e.employeeId]">Preview</button></td>
+                <td><button class="btn btn-primary btn-info btn-block" [routerLink]="['/employee/summary', e.employeeId]">Benefit & Pay Summary</button></td>
                 <td><button class="btn btn-primary btn-success btn-block" [routerLink]="['/employee/edit', e.employeeId]">Edit</button></td>
-                <td><button class="btn btn-primary btn-danger btn-block">Delete</button></td>
             </tr>
         </tbody>
     </table>

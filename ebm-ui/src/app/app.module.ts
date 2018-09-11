@@ -45,10 +45,22 @@ import { BenefitPaySummaryComponent } from './benefitpaysummary/benefitpaysummar
 })
 
 export class AppModule {
+  private defaultOptionsApollo: any = {
+    watchQuery: {
+      fetchPolicy: 'network-only',
+      errorPolicy: 'ignore',
+    },
+    query: {
+      fetchPolicy: 'network-only',
+      errorPolicy: 'all',
+    },
+  };
+
   constructor(apollo: Apollo, httpLink: HttpLink) {
     apollo.create({
       link: httpLink.create({uri: 'http://localhost:60590/api/ebm'}),
-      cache: new InMemoryCache() as ApolloCache<NormalizedCacheObject>
+      cache: new InMemoryCache() as ApolloCache<NormalizedCacheObject>,
+      defaultOptions: this.defaultOptionsApollo,
     });
   }
 }

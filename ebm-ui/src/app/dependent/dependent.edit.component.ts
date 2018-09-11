@@ -1,5 +1,4 @@
 import { Component, OnInit, Injectable, Input } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { DependentModel } from './dependent.model';
 
 @Component({
@@ -14,11 +13,7 @@ export class DependentEditComponent implements OnInit {
     @Input() currentDependent: DependentModel;
     title: string;
 
-    constructor() {
+    constructor() { }
 
-    }
-
-    ngOnInit(): void {
-
-    }
+    ngOnInit(): void { }
 }

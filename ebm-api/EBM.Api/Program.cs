@@ -12,7 +12,6 @@ namespace EBM.Api
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http://localhost:60590")
                 .UseStartup<Startup>();
     }
 }

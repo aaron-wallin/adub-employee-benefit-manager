@@ -1,5 +1,5 @@
-import { Component, OnInit, Injectable, Input } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { EmployeeDataService } from '../services/employee.data.service';
 
 @Component({
@@ -23,6 +23,10 @@ export class BenefitPaySummaryComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.loadData();
+    }
+
+    private loadData() {
         this._employeeDataService.getEmployeeBenefitPaySummary(this.employeeId).subscribe(({data}) => {
             this.benefitPaySummaryData = data.employee;
 

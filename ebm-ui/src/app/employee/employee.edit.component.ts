@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeDataService } from '../services/employee.data.service';
 import { EmployeeModel } from './employee.model';
 import { DependentModel } from '../dependent/dependent.model';

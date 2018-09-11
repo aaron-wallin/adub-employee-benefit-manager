@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { EmployeeDataService } from '../services/employee.data.service';
-import { EmployeeModel } from './employee.model';
 import { EmployeeListModel } from './employee.model.list';
-import { DependentModel } from '../dependent/dependent.model';
 
 @Component({
   selector: 'ebm-employee-list',
@@ -15,9 +12,7 @@ export class EmployeeListComponent implements OnInit {
     employeeList: Array<EmployeeListModel> = new Array<EmployeeListModel>();
     selectedEmployee: any;
 
-    constructor(private _routeParams: ActivatedRoute,
-                private _employeeDataService: EmployeeDataService) {
-                }
+    constructor(private _employeeDataService: EmployeeDataService) { }
 
     ngOnInit(): void {
         this._employeeDataService.getEmployeeList().subscribe(({data}) => {
