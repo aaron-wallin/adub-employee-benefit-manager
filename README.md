@@ -16,3 +16,5 @@
 
 ## Live Demo
 - https://ebm-client.cfapps.io
+- Live demo is running on Pivotal Web Services
+- Due to in memory storage of data, occassional restarting of the service will cause data to be removed
