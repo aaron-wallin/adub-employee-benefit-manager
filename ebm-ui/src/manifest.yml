@@ -1,0 +1,7 @@
+---
+applications:
+- name: ebm-client
+  buildpacks:
+    - https://github.com/cloudfoundry/staticfile-buildpack.git
+  memory: 256M
+  instances: 1
