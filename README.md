@@ -6,7 +6,9 @@
 
 ## Client
 - Client application is Angular communicating to the server side Api
-- Visual Studio Code / latest angular cli
+- Visual Studio Code / angular cli
+- Node for Windows v10.6.0
+- NPM for Windows v6.4.1
 
 ## Known Missing Components
 - Security: originally planned to implement Auth0 for token based authorization and authentication
