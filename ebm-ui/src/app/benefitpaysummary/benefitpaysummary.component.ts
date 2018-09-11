@@ -13,6 +13,7 @@ export class BenefitPaySummaryComponent implements OnInit {
 
     title: string;
     benefitPaySummaryData: any;
+    deductionData: any;
     employeeId: string;
 
     constructor(private _employeeDataService: EmployeeDataService,
@@ -24,7 +25,16 @@ export class BenefitPaySummaryComponent implements OnInit {
     ngOnInit(): void {
         this._employeeDataService.getEmployeeBenefitPaySummary(this.employeeId).subscribe(({data}) => {
             this.benefitPaySummaryData = data.employee;
-            console.log(this.benefitPaySummaryData);
+
+            const dedKeys = Object.keys(this.benefitPaySummaryData.paycheck.deductions);
+
+            const goodDeductions = [];
+            dedKeys.forEach(d => {
+                console.log(this.benefitPaySummaryData.paycheck.deductions[d]);
+                goodDeductions.push(this.benefitPaySummaryData.paycheck.deductions[d]);
+            });
+
+            this.deductionData = goodDeductions;
         });
     }
 }

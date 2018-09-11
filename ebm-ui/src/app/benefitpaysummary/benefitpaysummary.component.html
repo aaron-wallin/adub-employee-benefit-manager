@@ -47,7 +47,7 @@
             <thead>
                 <tr>
                     <th scope="col" class="rightTableCell">Gross Pay</th>
-                    <th scope="col">Deductions</th>
+                    <th scope="col" class="rightTableCell">Deductions</th>
                     <th scope="col" class="rightTableCell">Net Pay</th>
                 </tr>
             </thead>
@@ -55,14 +55,9 @@
             <tbody>
                 <tr>
                     <td class="rightTableCell">{{benefitPaySummaryData?.paycheck?.grossAmount | currency}}</td>
-                    <td>
-                        <div *ngFor='let m of benefitInfoSummary?.paycheck?.deductions'>
-                            <div>
-                                {{m.key}}
-                            </div>
-                            <div>
-                                {{m.value | currency}}
-                            </div>
+                    <td class="rightTableCell">              
+                        <div *ngFor='let m of deductionData'>                            
+                            {{m.key}}:  {{m.value | currency}}                            
                         </div>
                     </td>
                     <td class="rightTableCell">{{benefitPaySummaryData?.paycheck?.netAmount | currency}}</td>

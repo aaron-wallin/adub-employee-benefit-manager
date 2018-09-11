@@ -47,7 +47,7 @@ import { BenefitPaySummaryComponent } from './benefitpaysummary/benefitpaysummar
 export class AppModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
     apollo.create({
-      link: httpLink.create({uri: 'http://localhost:19015/api/ebm'}),
+      link: httpLink.create({uri: 'http://localhost:60590/api/ebm'}),
       cache: new InMemoryCache() as ApolloCache<NormalizedCacheObject>
     });
   }
